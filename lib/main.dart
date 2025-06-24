@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p_01/statesul_profile_card.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = const [
     Center(child: Text("Page 1",style: TextStyle(fontSize: 30, color: Colors.black),)),
     Center(child: Text("Page 2",style: TextStyle(fontSize: 30, color: Colors.black),)),
-    Center(child: Text("Page 3",style: TextStyle(fontSize: 30, color: Colors.black),)),
+    StatefulProfileCard(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -44,6 +45,8 @@ class _MainScreenState extends State<MainScreen> {
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) => setState(() => _currentIndex = index),
+          selectedItemColor: Colors.blue.shade700,
+          unselectedItemColor: Colors.grey,
           items: const[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
